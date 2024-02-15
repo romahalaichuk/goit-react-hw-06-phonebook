@@ -1,0 +1,36 @@
+.listContainer {
+  margin-top: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.contactItem {
+  font-size: 20px;
+  margin-bottom: 10px;
+  animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.deleteButton {
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover {
+  background-color: #d9534f;
+}
