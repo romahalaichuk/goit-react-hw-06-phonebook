@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { nanoid } from 'nanoid';
+import { addContact } from '../actions';
+import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 
 const ContactForm = ({ addContact }) => {
@@ -8,6 +10,8 @@ const ContactForm = ({ addContact }) => {
     name: '',
     number: '',
   });
+
+  const dispatch = useDispatch();
 
   const handleChange = e => {
     setFormData({
@@ -18,7 +22,7 @@ const ContactForm = ({ addContact }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addContact({ id: nanoid(), ...formData });
+    dispatch(addContact({ id: nanoid(), ...formData }));
     setFormData({
       name: '',
       number: '',
@@ -26,16 +30,15 @@ const ContactForm = ({ addContact }) => {
   };
 
   return (
-    <form className={styles.formContainer} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.formContainer}>
       <label>
         Name:
         <input
           type="text"
           name="name"
-          title="Name may contain only letters, apostrophe, dash and spaces."
-          required
           value={formData.name}
           onChange={handleChange}
+          required
           className={styles.input}
         />
       </label>
@@ -44,10 +47,9 @@ const ContactForm = ({ addContact }) => {
         <input
           type="tel"
           name="number"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          required
           value={formData.number}
           onChange={handleChange}
+          required
           className={styles.input}
         />
       </label>

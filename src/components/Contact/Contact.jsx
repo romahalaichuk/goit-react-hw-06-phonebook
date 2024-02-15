@@ -1,20 +1,13 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Contact.module.css';
 
 const Contact = ({ contact, deleteContact }) => {
-  const handleDelete = useCallback(() => {
-    deleteContact(contact.id);
-  }, [contact.id, deleteContact]);
-
   return (
-    <li className={styles.contactItem}>
-      <span className={styles.contactInfo}>
+    <li>
+      <span>
         {contact.name}: {contact.number}
       </span>
-      <button className={styles.deleteButton} onClick={handleDelete}>
-        Delete
-      </button>
+      <button onClick={() => deleteContact(contact.id)}>Delete</button>
     </li>
   );
 };
