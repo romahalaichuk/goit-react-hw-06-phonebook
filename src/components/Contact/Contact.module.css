@@ -10,18 +10,6 @@
 }
 
 .contactInfo {
+  font-size: 20px;
   flex: 1;
-}
-
-.deleteButton {
-  background-color: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 3px;
-}
-
-.deleteButton:hover {
-  background-color: #bd2130;
 }

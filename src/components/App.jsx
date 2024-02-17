@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
@@ -10,11 +11,11 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   const handleDeleteContact = id => {
-    // dispatch deleteContact action
+    // Obsługa usuwania kontaktu, ta funkcja będzie przekazywana do ContactList
   };
 
   const handleAddContact = contact => {
-    // dispatch addContact action
+    // Obsługa dodawania kontaktu
   };
 
   return (
@@ -24,6 +25,7 @@ const App = () => {
         <ContactForm addContact={handleAddContact} />
         <h2 className={styles.title}>Contacts</h2>
         <Filter setFilter={setFilter} />
+        {/* Przekazanie funkcji handleDeleteContact do ContactList */}
         <ContactList filter={filter} deleteContact={handleDeleteContact} />
       </div>
     </Provider>

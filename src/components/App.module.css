@@ -16,3 +16,19 @@ body {
   font-size: 32px;
   color: #333;
 }
+label {
+  font-size: 30px;
+}
+button {
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d9534f;
+}

@@ -36,7 +36,9 @@ const ContactForm = () => {
         onChange={e => setNumber(e.target.value)}
         required
       />
-      <button type="submit">Add Contact</button>
+      <button className={styles.button} type="submit">
+        Add Contact
+      </button>
     </form>
   );
 };
