@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import Contact from '../Contact/Contact';
 import styles from './ContactList.module.css';
-import { deleteContact } from '../../redux/phonebookSlice'; // Zaktualizowano import akcji
+import { deleteContact } from '../../redux/phonebookSlice';
 
 const ContactList = () => {
   const [filter, setFilter] = useState('');
