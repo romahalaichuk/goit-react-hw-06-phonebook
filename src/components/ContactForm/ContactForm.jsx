@@ -1,67 +1,44 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { addContact } from '../../redux/phonebookSlice';
 import { nanoid } from 'nanoid';
-import { addContact } from '../actions';
-import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 
-const ContactForm = ({ addContact }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    number: '',
-  });
-
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
   const dispatch = useDispatch();
-
-  const handleChange = e => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(addContact({ id: nanoid(), ...formData }));
-    setFormData({
-      name: '',
-      number: '',
-    });
+    dispatch(addContact({ id: nanoid(), name, number }));
+    setName('');
+    setNumber('');
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.formContainer}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
-      </label>
-      <label>
-        Number:
-        <input
-          type="tel"
-          name="number"
-          value={formData.number}
-          onChange={handleChange}
-          required
-          className={styles.input}
-        />
-      </label>
-      <button type="submit" className={styles.button}>
-        Add Contact
-      </button>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        required
+      />
+      <label htmlFor="number">Number:</label>
+      <input
+        type="text"
+        id="number"
+        name="number"
+        value={number}
+        onChange={e => setNumber(e.target.value)}
+        required
+      />
+      <button type="submit">Add Contact</button>
     </form>
   );
-};
-
-ContactForm.propTypes = {
-  addContact: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
