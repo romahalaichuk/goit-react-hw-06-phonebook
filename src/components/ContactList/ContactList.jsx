@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
 import Contact from '../Contact/Contact';
+import Filter from '../Filter/Filter';
 import styles from './ContactList.module.css';
 import { deleteContact } from '../../redux/phonebookSlice';
 
 const ContactList = () => {
-  const [filter, setFilter] = useState('');
+  const filter = useSelector(state => state.phonebook.filter);
   const contacts = useSelector(state => state.phonebook.contacts);
   const dispatch = useDispatch();
 
-  const filteredContacts = filter
-    ? contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter.toLowerCase())
-      )
-    : contacts;
+  const filteredContacts = contacts.filter(
+    contact =>
+      contact.name.toLowerCase().includes(filter.toLowerCase()) ||
+      contact.number.includes(filter)
+  );
 
   const handleDeleteContact = id => {
     dispatch(deleteContact(id));
@@ -22,27 +22,18 @@ const ContactList = () => {
 
   return (
     <div>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={filter}
-        onChange={e => setFilter(e.target.value)}
-      />
+      <Filter />
       <ul className={styles.listContainer}>
         {filteredContacts.map(contact => (
           <Contact
-            key={contact.id.toString()}
+            key={contact.id ? contact.id.toString() : contact.name}
             contact={contact}
-            deleteContact={handleDeleteContact}
+            deleteContact={() => handleDeleteContact(contact.id)}
           />
         ))}
       </ul>
     </div>
   );
-};
-
-ContactList.propTypes = {
-  deleteContact: PropTypes.func.isRequired,
 };
 
 export default ContactList;

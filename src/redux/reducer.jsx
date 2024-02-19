@@ -12,12 +12,17 @@ const rootReducer = (state = initialState, action) => {
         contacts: [...state.contacts, action.payload],
       };
     case DELETE_CONTACT:
-      return {
-        ...state,
-        contacts: state.contacts.filter(
-          contact => contact.id !== action.payload
-        ),
-      };
+      if (action.payload) {
+        return {
+          ...state,
+          contacts: state.contacts.filter(
+            contact => contact.id !== action.payload
+          ),
+        };
+      } else {
+        console.error('Contact ID is undefined!');
+        return state;
+      }
     default:
       return state;
   }
