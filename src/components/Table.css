@@ -1,0 +1,34 @@
+.table {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	border-radius: 8px;
+	font-size: 1.2rem;
+	cursor: pointer;
+	user-select: none;
+	transition: background-color 0.3s;
+}
+
+.table-free {
+	background-color: green;
+	color: white;
+}
+
+.table-occupied {
+	background-color: red;
+	color: black;
+}
+
+.table-special {
+	background-color: blue;
+	color: white;
+}
+
+.table-name,
+.table-status {
+	text-align: center;
+	width: 100%;
+}

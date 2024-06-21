@@ -1,0 +1,17 @@
+export const products = [
+	{ id: 1, name: "Bruschetta", price: 15, category: "Przystawki" },
+	{ id: 2, name: "Capricciosa", price: 30, category: "Pizza" },
+	{ id: 3, name: "Carbonara", price: 25, category: "Makaron" },
+	{ id: 4, name: "Sałatka Letnia", price: 18, category: "Menu sezonowe" },
+	{ id: 5, name: "Tiramisu", price: 12, category: "Desery" },
+	{ id: 6, name: "Cola", price: 5, category: "Napój bezalkoholowy" },
+	{ id: 7, name: "Chianti Classico", price: 80, category: "Wina" },
+	{ id: 8, name: "Mojito", price: 20, category: "Drinki" },
+	{ id: 9, name: "Capdggfricciosa", price: 30, category: "Pizza" },
+	{ id: 10, name: "Carbofdfdgnara", price: 25, category: "Makaron" },
+	{ id: 11, name: "Sałafdfdtka Letnia", price: 18, category: "Menu sezonowe" },
+	{ id: 12, name: "Tirafdgfdmisu", price: 12, category: "Desery" },
+	{ id: 13, name: "Cofgdfla", price: 5, category: "Napój bezalkoholowy" },
+	{ id: 14, name: "Chifgfdanti Classico", price: 80, category: "Wina" },
+	{ id: 15, name: "Mojfddffito", price: 20, category: "Drinki" },
+];

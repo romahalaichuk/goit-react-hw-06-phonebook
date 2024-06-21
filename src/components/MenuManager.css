@@ -1,0 +1,173 @@
+.menu-manager-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.menu-manager {
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	max-width: 600px;
+	width: 100%;
+	text-align: center;
+}
+
+.menu-manager h2 {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+.search-bar {
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.search-bar input {
+	width: 80%;
+	padding: 10px;
+	font-size: 1.2rem;
+}
+
+.search-suggestions {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 100;
+}
+
+.search-suggestion {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.search-suggestion:hover {
+	background-color: #f0f0f0;
+}
+
+.category-buttons {
+	margin-bottom: 20px;
+}
+
+.category-buttons button {
+	padding: 10px 20px;
+	font-size: 1rem;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	border: none;
+	background-color: #008cba;
+	color: white;
+}
+
+.category-buttons button:hover {
+	background-color: #007b9f;
+}
+
+.menu-items-modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 1100;
+}
+
+.menu-items h3 {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+}
+
+.menu-items ul {
+	list-style: none;
+	padding: 0;
+}
+
+.menu-items li {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+}
+
+.menu-items button {
+	padding: 5px 10px;
+	font-size: 1rem;
+	cursor: pointer;
+	border: none;
+	background-color: #008cba;
+	color: white;
+}
+
+.menu-items button:hover {
+	background-color: #007b9f;
+}
+
+.selected-items {
+	margin-top: 20px;
+}
+
+.selected-items h3 {
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+}
+
+.selected-items ul {
+	list-style: none;
+	padding: 0;
+}
+
+.selected-items li {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0;
+}
+
+.selected-items button {
+	padding: 5px 10px;
+	font-size: 1rem;
+	cursor: pointer;
+	border: none;
+	background-color: #008cba;
+	color: white;
+}
+
+.selected-items button:hover {
+	background-color: #007b9f;
+}
+
+.modal-buttons {
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.modal-buttons button {
+	padding: 10px 20px;
+	font-size: 1.2rem;
+	margin: 0 10px;
+	cursor: pointer;
+	border: none;
+	background-color: #008cba;
+	color: white;
+}
+
+.modal-buttons button:hover {
+	background-color: #007b9f;
+}
